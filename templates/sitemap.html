@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Sitemap - USA Tours{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="sitemap-container">
+        <h1 class="sitemap-title">Sitemap</h1>
+        <p class="sitemap-description">A complete list of all pages on the USA Tours website to help you navigate our content.</p>
+        
+        <div class="sitemap-section">
+            <h2>Main Pages</h2>
+            <ul class="sitemap-list">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('sitemap') }}">Sitemap</a></li>
+                <li><a href="{{ url_for('search') }}">Search</a></li>
+            </ul>
+        </div>
+        
+        <div class="sitemap-section">
+            <h2>State Pages</h2>
+            <ul class="sitemap-list">
+                {% for state_abbr, state_name in states %}
+                <li>
+                    <a href="{{ url_for('state_tours', state_name_lower=state_name.lower()) }}">{{ state_name }} Tours</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="sitemap-section">
+            <h2>Tour Categories</h2>
+            <ul class="sitemap-list">
+                {% for category in tour_categories %}
+                <li>
+                    <a href="{{ url_for('search', query=category) }}">{{ category }} Tours</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <div class="sitemap-section">
+            <h2>Tour Pages</h2>
+            <ul class="sitemap-list">
+                {% for state_name, tours in tours_by_state.items() %}
+                {% if tours %}
+                <li class="sitemap-parent">
+                    <span>{{ state_name }} Tours ({{ tours|length }})</span>
+                    <ul class="sitemap-sublist">
+                        {% for tour in tours %}
+                        <li>
+                            <a href="{{ url_for('tour_detail', state_name_lower=state_name.lower(), tour_slug=tour.Slug) }}">{{ tour.Title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %} 

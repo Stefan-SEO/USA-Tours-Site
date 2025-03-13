@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+
+{% block title %}USA Tours - Explore America's Best Tours{% endblock %}
+
+{% block content %}
+<div class="hero-fullwidth">
+    <div class="hero-content">
+        <h1>Discover America's Best Tours</h1>
+        <p>Explore top-rated tours across all 50 states</p>
+        <form action="{{ url_for('search') }}" method="get" class="search-form">
+            <input type="text" name="query" placeholder="Search for tours, destinations, or activities...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Top Picks Section -->
+    <section class="top-picks-section">
+        <h2>Tours in America: Our Top Picks</h2>
+        <div class="top-picks-row">
+            <div class="top-pick-card">
+                <div class="top-pick-label">Top Pick</div>
+                <a href="/hawaii/tour/tour-of-north-shore-waimea-waterfall">
+                    <div class="top-pick-image">
+                        <img src="{{ url_for('static', filename='images/All States/Hawaii.jpg') }}" alt="Hawaii Tour">
+                    </div>
+                    <h3>Tour of North Shore & Waimea Waterfall</h3>
+                    <p class="top-pick-state">Hawaii</p>
+                    <div class="top-pick-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="top-pick-reviews">1,245 reviews</p>
+                    <p class="top-pick-price">From $129</p>
+                </a>
+            </div>
+            <div class="top-pick-card">
+                <div class="top-pick-label">Top Pick</div>
+                <a href="/florida/tour/key-west-sunset-sail-with-full-bar-live-music-and-hors-doeuvres">
+                    <div class="top-pick-image">
+                        <img src="{{ url_for('static', filename='images/All States/Florida.jpg') }}" alt="Florida Tour">
+                    </div>
+                    <h3>Key West Sunset Sail with Full Bar</h3>
+                    <p class="top-pick-state">Florida</p>
+                    <div class="top-pick-stars">⭐⭐⭐⭐½</div>
+                    <p class="top-pick-reviews">982 reviews</p>
+                    <p class="top-pick-price">From $89</p>
+                </a>
+            </div>
+            <div class="top-pick-card">
+                <div class="top-pick-label">Top Pick</div>
+                <a href="/arizona/tour/small-group-grand-canyon-complete-tour-from-sedona-or-flagstaff">
+                    <div class="top-pick-image">
+                        <img src="{{ url_for('static', filename='images/All States/Arizona.jpg') }}" alt="Arizona Tour">
+                    </div>
+                    <h3>Small-Group Grand Canyon Complete Tour</h3>
+                    <p class="top-pick-state">Arizona</p>
+                    <div class="top-pick-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="top-pick-reviews">1,876 reviews</p>
+                    <p class="top-pick-price">From $159</p>
+                </a>
+            </div>
+        </div>
+        <div class="top-picks-row">
+            <div class="top-pick-card">
+                <div class="top-pick-label">Top Pick</div>
+                <a href="/new%20york/tour/new-york-in-one-day-guided-sightseeing-tour">
+                    <div class="top-pick-image">
+                        <img src="{{ url_for('static', filename='images/All States/New York City.jpg') }}" alt="New York Tour">
+                    </div>
+                    <h3>New York in One Day Guided Sightseeing Tour</h3>
+                    <p class="top-pick-state">New York</p>
+                    <div class="top-pick-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="top-pick-reviews">2,341 reviews</p>
+                    <p class="top-pick-price">From $109</p>
+                </a>
+            </div>
+            <div class="top-pick-card">
+                <div class="top-pick-label">Top Pick</div>
+                <a href="/nevada/tour/grand-canyon-west-hoover-dam-stop-and-optional-lunch-and-skywalk">
+                    <div class="top-pick-image">
+                        <img src="{{ url_for('static', filename='images/All States/Nevada.jpg') }}" alt="Nevada Tour">
+                    </div>
+                    <h3>Grand Canyon West & Hoover Dam Tour</h3>
+                    <p class="top-pick-state">Nevada</p>
+                    <div class="top-pick-stars">⭐⭐⭐⭐½</div>
+                    <p class="top-pick-reviews">1,532 reviews</p>
+                    <p class="top-pick-price">From $124</p>
+                </a>
+            </div>
+            <div class="top-pick-card">
+                <div class="top-pick-label">Top Pick</div>
+                <a href="/utah/tour/discover-the-best-of-moab-in-a-day-arches-canyonlands-dead-horse">
+                    <div class="top-pick-image">
+                        <img src="{{ url_for('static', filename='images/All States/Utah.jpg') }}" alt="Utah Tour">
+                    </div>
+                    <h3>Discover the Best of Moab in a Day</h3>
+                    <p class="top-pick-state">Utah</p>
+                    <div class="top-pick-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="top-pick-reviews">1,128 reviews</p>
+                    <p class="top-pick-price">From $139</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="states-section">
+        <h2 class="states-heading">Browse Tours by State</h2>
+        <p class="states-subheading">Discover unforgettable day tours and experiences across America. Here are all 50 states plus the District of Columbia.</p>
+        <div class="states-grid">
+            {% for state_abbr, state_name in states %}
+            <div class="state-card">
+                <a href="{{ url_for('state_tours', state_name_lower=state_name.lower()) }}">
+                    <div class="state-image">
+                        {% if state_name == 'Georgia' %}
+                        <img src="{{ url_for('static', filename='images/All States/Atlanta Georgia.jpg') }}" alt="{{ state_name }}">
+                        {% elif state_name == 'West Virginia' %}
+                        <img src="{{ url_for('static', filename='images/All States/Charleston West Virginia.jpg') }}" alt="{{ state_name }}">
+                        {% elif state_name == 'New York' %}
+                        <img src="{{ url_for('static', filename='images/All States/New York City.jpg') }}" alt="{{ state_name }}">
+                        {% elif state_name == 'New Hampshire' %}
+                        <img src="{{ url_for('static', filename='images/All States/New Hamshire.jpg') }}" alt="{{ state_name }}">
+                        {% elif state_name == 'Louisiana' %}
+                        <img src="{{ url_for('static', filename='images/All States/Louisiana New Orleans.jpg') }}" alt="{{ state_name }}">
+                        {% elif state_name == 'District of Columbia' %}
+                        <img src="{{ url_for('static', filename='images/All States/Washington DC.jpg') }}" alt="{{ state_name }}">
+                        {% elif state_name == 'Oklahoma' %}
+                        <img src="{{ url_for('static', filename='images/All States/Oklahoma city.jpg') }}" alt="{{ state_name }}">
+                        {% elif state_name == 'Washington' %}
+                        <img src="{{ url_for('static', filename='images/All States/Seattle.jpg') }}" alt="{{ state_name }}">
+                        {% else %}
+                        <img src="{{ url_for('static', filename='images/All States/' + state_name + '.jpg') }}" alt="{{ state_name }}">
+                        {% endif %}
+                    </div>
+                    <h3>{{ state_name }}</h3>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="featured-section">
+        <h2>Why Choose Us?</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🌟</div>
+                <h3>Curated Experiences</h3>
+                <p>Hand-picked tours with exceptional quality and value</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💰</div>
+                <h3>Best Price Guarantee</h3>
+                <p>Find a lower price and we'll match it</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure Booking</h3>
+                <p>Safe and secure payment processing</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+                <h3>Free Cancellation</h3>
+                <p>Cancel up to 24 hours before the tour and receive a full refund</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Carousel Section -->
+    <section class="reviews-section">
+        <h2>What Our Customers Say</h2>
+        <div class="reviews-carousel">
+            <div class="review-item">
+                <div class="review-image">
+                    <img src="{{ url_for('static', filename='images/Sarah from California.jpg') }}" alt="Sarah M.">
+                </div>
+                <div class="review-content">
+                    <p class="review-text">"Booking was super easy, and the tour was even better than we expected! The guide was friendly, and we saw so many amazing places we wouldn't have found on our own. Highly recommend!"</p>
+                    <p class="review-author">— Sarah M., California</p>
+                </div>
+            </div>
+            <div class="review-item">
+                <div class="review-image">
+                    <img src="{{ url_for('static', filename='images/James from Texas.jpg') }}" alt="James L.">
+                </div>
+                <div class="review-content">
+                    <p class="review-text">"Great value for the price! We found the perfect day tour, and it was well-organized from start to finish. Definitely made our trip more memorable."</p>
+                    <p class="review-author">— James L., Texas</p>
+                </div>
+            </div>
+            <div class="review-item">
+                <div class="review-image">
+                    <img src="{{ url_for('static', filename='images/Emma from New York.jpg') }}" alt="Emma R.">
+                </div>
+                <div class="review-content">
+                    <p class="review-text">"Customer service was quick and helpful when we had questions. The tour itself was fantastic, and everything went smoothly. Will definitely book again for our next trip!"</p>
+                    <p class="review-author">— Emma R., New York</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %} 

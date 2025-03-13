@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Results for "{{ query }}" - USA Tours{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="search-header">
+        <h1>Search Results for "{{ query }}"</h1>
+        <form action="{{ url_for('search') }}" method="get" class="search-form">
+            <input type="text" name="query" value="{{ query }}" placeholder="Search for tours, destinations, or activities...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
+
+    <div class="search-results">
+        {% if results %}
+            <p class="results-count">{{ results|length }} results found</p>
+            <div class="tours-grid">
+                {% for tour in results %}
+                <div class="tour-card">
+                    <div class="tour-image">
+                        <a href="{{ url_for('tour_detail', state_name_lower=tour.State.lower(), tour_slug=tour.Slug) }}">
+                            {% if tour['Image URL'] and tour['Image URL']|length > 0 %}
+                            <img src="{{ tour['Image URL'] }}" alt="{{ tour.Title }}">
+                            {% else %}
+                                {% if tour.State == 'Georgia' %}
+                                <img src="{{ url_for('static', filename='images/All States/Atlanta Georgia.jpg') }}" alt="{{ tour.State }}">
+                                {% elif tour.State == 'West Virginia' %}
+                                <img src="{{ url_for('static', filename='images/All States/Charleston West Virginia.jpg') }}" alt="{{ tour.State }}">
+                                {% elif tour.State == 'New York' %}
+                                <img src="{{ url_for('static', filename='images/All States/New York City.jpg') }}" alt="{{ tour.State }}">
+                                {% elif tour.State == 'New Hampshire' %}
+                                <img src="{{ url_for('static', filename='images/All States/New Hamshire.jpg') }}" alt="{{ tour.State }}">
+                                {% elif tour.State == 'Louisiana' %}
+                                <img src="{{ url_for('static', filename='images/All States/Louisiana New Orleans.jpg') }}" alt="{{ tour.State }}">
+                                {% elif tour.State == 'District of Columbia' %}
+                                <img src="{{ url_for('static', filename='images/All States/Washington DC.jpg') }}" alt="{{ tour.State }}">
+                                {% elif tour.State == 'Oklahoma' %}
+                                <img src="{{ url_for('static', filename='images/All States/Oklahoma city.jpg') }}" alt="{{ tour.State }}">
+                                {% elif tour.State == 'Washington' %}
+                                <img src="{{ url_for('static', filename='images/All States/Seattle.jpg') }}" alt="{{ tour.State }}">
+                                {% else %}
+                                <img src="{{ url_for('static', filename='images/All States/' + tour.State + '.jpg') }}" alt="{{ tour.State }}">
+                                {% endif %}
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="tour-info">
+                        <h3>
+                            <a href="{{ url_for('tour_detail', state_name_lower=tour.State.lower(), tour_slug=tour.Slug) }}">
+                                {{ tour.Title }}
+                            </a>
+                        </h3>
+                        <p class="tour-location">{{ tour.State }}</p>
+                        <p class="tour-price">From ${{ tour.Price }}</p>
+                        <div class="tour-meta">
+                            <span class="tour-duration">{{ tour.Duration }}</span>
+                            {% if tour['Reviews Count'] %}
+                            <span class="tour-reviews">{{ tour['Reviews Count'] }} reviews</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="no-results">
+                <p>No results found for "{{ query }}".</p>
+                <p>Try different keywords or browse tours by state below.</p>
+            </div>
+            
+            <div class="browse-states">
+                <h2 class="text-center">Browse Tours by State</h2>
+                <div class="states-grid-columns">
+                    {% set states_list = states|sort(attribute=1) %}
+                    {% set states_per_column = (states|length / 5)|round(0, 'ceil')|int %}
+                    
+                    {% for i in range(5) %}
+                    <div class="states-column">
+                        {% for j in range(states_per_column) %}
+                            {% set index = i * states_per_column + j %}
+                            {% if index < states|length %}
+                                {% set state_abbr, state_name = states_list[index] %}
+                                <a href="{{ url_for('state_tours', state_name_lower=state_name.lower()) }}" class="state-link">{{ state_name }}</a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %} 

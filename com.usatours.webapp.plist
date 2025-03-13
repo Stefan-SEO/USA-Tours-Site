@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.usatours.webapp</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Library/Frameworks/Python.framework/Versions/3.13/bin/gunicorn</string>
+        <string>--workers</string>
+        <string>3</string>
+        <string>--bind</string>
+        <string>0.0.0.0:8083</string>
+        <string>app:app</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+    <key>WorkingDirectory</key>
+    <string>/Users/ste/USA Tours Site</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/ste/USA Tours Site/error.log</string>
+    <key>StandardOutPath</key>
+    <string>/Users/ste/USA Tours Site/output.log</string>
+</dict>
+</plist> 

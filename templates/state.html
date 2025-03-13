@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}The Best Tours in {{ state_full }}{% endblock %}
+
+{% block meta_description %}Discover the best day tours in {{ state_full }}. Find activities, outdoor adventures, guided city tours, and transportation options to make the most of it.{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="state-header">
+        <h1>The Best Tours in {{ state_full }}</h1>
+        
+        <div class="state-intro">
+            <p>Looking for the best tours in {{ state_full }}? We've gathered top-rated tours to help you explore the highlights. Discover outdoor adventures, cultural experiences, and even transportation options.</p>
+            
+            <p>We have something for everyone. Whether you're planning a quick day trip or a longer stay, these tours will help you make the most of your visit.</p>
+        </div>
+        
+        <h2>The Top-Rated Tours in {{ state_full }}</h2>
+        <p>Explore the best tours in {{ state_full }}</p>
+    </div>
+
+    <div class="tours-grid">
+        {% for tour in tours %}
+        <div class="tour-card">
+            <div class="tour-image">
+                <a href="{{ url_for('tour_detail', state_name_lower=state_full.lower(), tour_slug=tour.Slug) }}">
+                    {% if tour['Image URL'] and tour['Image URL']|length > 0 %}
+                    <img src="{{ tour['Image URL'] }}" alt="{{ tour.Title }}">
+                    {% else %}
+                        {% if state_full == 'Georgia' %}
+                        <img src="{{ url_for('static', filename='images/All States/Atlanta Georgia.jpg') }}" alt="{{ state_full }}">
+                        {% elif state_full == 'West Virginia' %}
+                        <img src="{{ url_for('static', filename='images/All States/Charleston West Virginia.jpg') }}" alt="{{ state_full }}">
+                        {% elif state_full == 'New York' %}
+                        <img src="{{ url_for('static', filename='images/All States/New York City.jpg') }}" alt="{{ state_full }}">
+                        {% elif state_full == 'New Hampshire' %}
+                        <img src="{{ url_for('static', filename='images/All States/New Hamshire.jpg') }}" alt="{{ state_full }}">
+                        {% elif state_full == 'Louisiana' %}
+                        <img src="{{ url_for('static', filename='images/All States/Louisiana New Orleans.jpg') }}" alt="{{ state_full }}">
+                        {% elif state_full == 'District of Columbia' %}
+                        <img src="{{ url_for('static', filename='images/All States/Washington DC.jpg') }}" alt="{{ state_full }}">
+                        {% elif state_full == 'Oklahoma' %}
+                        <img src="{{ url_for('static', filename='images/All States/Oklahoma city.jpg') }}" alt="{{ state_full }}">
+                        {% elif state_full == 'Washington' %}
+                        <img src="{{ url_for('static', filename='images/All States/Seattle.jpg') }}" alt="{{ state_full }}">
+                        {% else %}
+                        <img src="{{ url_for('static', filename='images/All States/' + state_full + '.jpg') }}" alt="{{ state_full }}">
+                        {% endif %}
+                    {% endif %}
+                </a>
+            </div>
+            <div class="tour-info">
+                <h3>
+                    <a href="{{ url_for('tour_detail', state_name_lower=state_full.lower(), tour_slug=tour.Slug) }}">
+                        {{ tour.Title }}
+                    </a>
+                </h3>
+                <p class="tour-price">From ${{ tour.Price }}</p>
+                <div class="tour-meta">
+                    <span class="tour-duration">{{ tour.Duration }}</span>
+                    {% if tour['Reviews Count'] %}
+                    <span class="tour-reviews">{{ tour['Reviews Count'] }} reviews</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if total_pages > 1 %}
+    <div class="pagination">
+        {% if current_page > 1 %}
+        <a href="{{ url_for('state_tours', state_name_lower=state_full.lower(), page=current_page-1) }}" class="page-link">&laquo; Previous</a>
+        {% endif %}
+        
+        {% for page_num in range(1, total_pages + 1) %}
+            {% if page_num == current_page %}
+            <span class="page-link active">{{ page_num }}</span>
+            {% else %}
+            <a href="{{ url_for('state_tours', state_name_lower=state_full.lower(), page=page_num) }}" class="page-link">{{ page_num }}</a>
+            {% endif %}
+        {% endfor %}
+        
+        {% if current_page < total_pages %}
+        <a href="{{ url_for('state_tours', state_name_lower=state_full.lower(), page=current_page+1) }}" class="page-link">Next &raquo;</a>
+        {% endif %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %} 

@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ tour.Title }} - {{ state_full }} Tour{% endblock %}
+
+{% block meta_description %}Find all the information about {{ tour.Title }} here before booking.{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="tour-header text-center">
+        <h1>{{ tour.Title }}</h1>
+        <p class="tour-location"><a href="{{ url_for('state_tours', state_name_lower=state_full.lower()) }}">{{ state_full }}</a></p>
+    </div>
+
+    <div class="tour-content-new">
+        <div class="tour-image-centered">
+            {% if tour['Image URL'] and tour['Image URL']|length > 0 %}
+            <img src="{{ tour['Image URL'] }}" alt="{{ tour.Title }}">
+            {% else %}
+                {% if state_full == 'Georgia' %}
+                <img src="{{ url_for('static', filename='images/All States/Atlanta Georgia.jpg') }}" alt="{{ state_full }}">
+                {% elif state_full == 'West Virginia' %}
+                <img src="{{ url_for('static', filename='images/All States/Charleston West Virginia.jpg') }}" alt="{{ state_full }}">
+                {% elif state_full == 'New York' %}
+                <img src="{{ url_for('static', filename='images/All States/New York City.jpg') }}" alt="{{ state_full }}">
+                {% elif state_full == 'New Hampshire' %}
+                <img src="{{ url_for('static', filename='images/All States/New Hamshire.jpg') }}" alt="{{ state_full }}">
+                {% elif state_full == 'Louisiana' %}
+                <img src="{{ url_for('static', filename='images/All States/Louisiana New Orleans.jpg') }}" alt="{{ state_full }}">
+                {% elif state_full == 'District of Columbia' %}
+                <img src="{{ url_for('static', filename='images/All States/Washington DC.jpg') }}" alt="{{ state_full }}">
+                {% elif state_full == 'Oklahoma' %}
+                <img src="{{ url_for('static', filename='images/All States/Oklahoma city.jpg') }}" alt="{{ state_full }}">
+                {% elif state_full == 'Washington' %}
+                <img src="{{ url_for('static', filename='images/All States/Seattle.jpg') }}" alt="{{ state_full }}">
+                {% else %}
+                <img src="{{ url_for('static', filename='images/All States/' + state_full + '.jpg') }}" alt="{{ state_full }}">
+                {% endif %}
+            {% endif %}
+        </div>
+        
+        <div class="spacer-10px"></div>
+        
+        <div class="tour-description">
+            <h2 class="text-center">Tour Description</h2>
+            {% if tour.Description %}
+                {% set paragraphs = tour.Description.split('\n\n') %}
+                {% if paragraphs|length > 2 %}
+                    <p>{{ paragraphs[0] }}</p>
+                    <div class="spacer-10px"></div>
+                    <p>{{ paragraphs[1] }}</p>
+                    <div class="spacer-10px"></div>
+                    <p>{{ paragraphs[2:] | join('\n\n') }}</p>
+                {% elif paragraphs|length > 1 %}
+                    <p>{{ paragraphs[0] }}</p>
+                    <div class="spacer-10px"></div>
+                    <p>{{ paragraphs[1:] | join('\n\n') }}</p>
+                    <div class="spacer-10px"></div>
+                    <p></p>
+                {% else %}
+                    {% set description_parts = tour.Description.split('. ') %}
+                    {% set part_length = (description_parts|length / 3)|int %}
+                    {% if part_length > 0 %}
+                        <p>{{ description_parts[:part_length]|join('. ') }}.</p>
+                        <div class="spacer-10px"></div>
+                        <p>{{ description_parts[part_length:part_length*2]|join('. ') }}.</p>
+                        <div class="spacer-10px"></div>
+                        <p>{{ description_parts[part_length*2:]|join('. ') }}</p>
+                    {% else %}
+                        <p>{{ description_parts[0] }}</p>
+                        <div class="spacer-10px"></div>
+                        <p></p>
+                        <div class="spacer-10px"></div>
+                        <p></p>
+                    {% endif %}
+                {% endif %}
+            {% else %}
+                <p>Discover the interesting background and culture of the area with our engaging private tour. Our friendly guides share fascinating stories about local customs and traditions, answering your questions along the way.</p>
+                <div class="spacer-10px"></div>
+                <p>You'll explore unique spots that most tourists miss, all while enjoying a well-organized tour with clear instructions.</p>
+                <div class="spacer-10px"></div>
+                <p>This tour is popular because it delivers exactly what we promise. A well-organized, informative, and enjoyable introduction to the area.</p>
+            {% endif %}
+        </div>
+        
+        {% if tour.Inclusions %}
+        <div class="spacer-10px"></div>
+        <div class="tour-inclusions">
+            <h2 class="text-center">What's Included</h2>
+            <p>{{ tour.Inclusions }}</p>
+        </div>
+        {% endif %}
+        
+        <div class="spacer-10px"></div>
+        
+        <div class="tour-booking-centered">
+            <p class="tour-price-large text-center">From ${{ tour.Price }}</p>
+            <p class="tour-duration-large text-center">{{ tour.Duration }}</p>
+            
+            {% if tour['Reviews Count'] %}
+            <p class="tour-reviews-large text-center">{{ tour['Reviews Count'] }} reviews</p>
+            {% endif %}
+            
+            {% if tour['Reviews Count'] %}
+                {% set random_rating = [4, 4.5, 5]|random %}
+                <p class="tour-stars-large">
+                    {% if random_rating == 4 %}
+                        ⭐⭐⭐⭐
+                    {% elif random_rating == 4.5 %}
+                        ⭐⭐⭐⭐½
+                    {% else %}
+                        ⭐⭐⭐⭐⭐
+                    {% endif %}
+                </p>
+            {% endif %}
+            
+            <div class="text-center">
+                <a href="{{ tour['Tour URL'] }}" class="book-button" target="_blank">Book Now</a>
+            </div>
+            
+            {% if tour.Cancellation %}
+            <div class="tour-meta-info text-center">
+                <p><strong>Cancellation Policy:</strong> {{ tour.Cancellation }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <div class="recommended-tours">
+        <h2 class="text-center">Similar Tours You Might Like</h2>
+        
+        <div class="similar-tours-grid">
+            {% set displayed_tours = namespace(count=0) %}
+            {% for other_tour in state_tours %}
+                {% if other_tour != tour and displayed_tours.count < 3 %}
+                    {% set displayed_tours.count = displayed_tours.count + 1 %}
+                    <div class="similar-tour-card">
+                        <div class="similar-tour-image">
+                            <a href="{{ url_for('tour_detail', state_name_lower=state_full.lower(), tour_slug=other_tour.Slug) }}">
+                                {% if other_tour['Image URL'] and other_tour['Image URL']|length > 0 %}
+                                <img src="{{ other_tour['Image URL'] }}" alt="{{ other_tour.Title }}">
+                                {% else %}
+                                    {% if state_full == 'Georgia' %}
+                                    <img src="{{ url_for('static', filename='images/All States/Atlanta Georgia.jpg') }}" alt="{{ state_full }}">
+                                    {% elif state_full == 'West Virginia' %}
+                                    <img src="{{ url_for('static', filename='images/All States/Charleston West Virginia.jpg') }}" alt="{{ state_full }}">
+                                    {% elif state_full == 'New York' %}
+                                    <img src="{{ url_for('static', filename='images/All States/New York City.jpg') }}" alt="{{ state_full }}">
+                                    {% elif state_full == 'New Hampshire' %}
+                                    <img src="{{ url_for('static', filename='images/All States/New Hamshire.jpg') }}" alt="{{ state_full }}">
+                                    {% elif state_full == 'Louisiana' %}
+                                    <img src="{{ url_for('static', filename='images/All States/Louisiana New Orleans.jpg') }}" alt="{{ state_full }}">
+                                    {% elif state_full == 'District of Columbia' %}
+                                    <img src="{{ url_for('static', filename='images/All States/Washington DC.jpg') }}" alt="{{ state_full }}">
+                                    {% elif state_full == 'Oklahoma' %}
+                                    <img src="{{ url_for('static', filename='images/All States/Oklahoma city.jpg') }}" alt="{{ state_full }}">
+                                    {% elif state_full == 'Washington' %}
+                                    <img src="{{ url_for('static', filename='images/All States/Seattle.jpg') }}" alt="{{ state_full }}">
+                                    {% else %}
+                                    <img src="{{ url_for('static', filename='images/All States/' + state_full + '.jpg') }}" alt="{{ state_full }}">
+                                    {% endif %}
+                                {% endif %}
+                            </a>
+                        </div>
+                        <div class="similar-tour-info">
+                            <h3 class="text-center">
+                                <a href="{{ url_for('tour_detail', state_name_lower=state_full.lower(), tour_slug=other_tour.Slug) }}">
+                                    {{ other_tour.Title }}
+                                </a>
+                            </h3>
+                            
+                            <p class="similar-tour-type text-center">{{ state_full }} tour</p>
+                            <p class="similar-tour-location text-center">{{ other_tour.Duration }}</p>
+                            
+                            <a href="{{ url_for('tour_detail', state_name_lower=state_full.lower(), tour_slug=other_tour.Slug) }}" class="visit-website-button">Book Now</a>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %} 
