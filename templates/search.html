@@ -19,7 +19,7 @@
                 {% for tour in results %}
                 <div class="tour-card">
                     <div class="tour-image">
-                        <a href="{{ url_for('tour_detail', state_name_lower=tour.State.lower(), tour_slug=tour.Slug) }}">
+                        <a href="{{ url_for('tour_detail', state_name_lower=tour.State.lower().replace(' ', '-'), tour_slug=tour.Slug) }}">
                             {% if tour['Image URL'] and tour['Image URL']|length > 0 %}
                             <img src="{{ tour['Image URL'] }}" alt="{{ tour.Title }}">
                             {% else %}
@@ -69,7 +69,7 @@
                     </div>
                     <div class="tour-info">
                         <h3>
-                            <a href="{{ url_for('tour_detail', state_name_lower=tour.State.lower(), tour_slug=tour.Slug) }}">
+                            <a href="{{ url_for('tour_detail', state_name_lower=tour.State.lower().replace(' ', '-'), tour_slug=tour.Slug) }}">
                                 {{ tour.Title }}
                             </a>
                         </h3>

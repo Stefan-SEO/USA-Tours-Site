@@ -46,7 +46,7 @@
                     <ul>
                         {% for tour in west_coast_tours %}
                         <li>
-                            <a href="{{ url_for('tour_detail', state_name_lower=tour.State.lower(), tour_slug=tour.Slug) }}">
+                            <a href="{{ url_for('tour_detail', state_name_lower=tour.State.lower().replace(' ', '-'), tour_slug=tour.Slug) }}">
                                 {{ tour.Title }}
                             </a>
                         </li>
@@ -59,7 +59,7 @@
                     <ul>
                         {% for tour in east_coast_tours %}
                         <li>
-                            <a href="{{ url_for('tour_detail', state_name_lower=tour.State.lower(), tour_slug=tour.Slug) }}">
+                            <a href="{{ url_for('tour_detail', state_name_lower=tour.State.lower().replace(' ', '-'), tour_slug=tour.Slug) }}">
                                 {{ tour.Title }}
                             </a>
                         </li>
@@ -72,7 +72,7 @@
                     <ul>
                         {% for tour in most_reviewed_tours %}
                         <li>
-                            <a href="{{ url_for('tour_detail', state_name_lower=tour.State.lower(), tour_slug=tour.Slug) }}">
+                            <a href="{{ url_for('tour_detail', state_name_lower=tour.State.lower().replace(' ', '-'), tour_slug=tour.Slug) }}">
                                 {{ tour.Title }}
                             </a>
                         </li>

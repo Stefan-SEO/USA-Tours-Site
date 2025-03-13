@@ -49,7 +49,7 @@
                     <ul class="sitemap-sublist">
                         {% for tour in tours %}
                         <li>
-                            <a href="{{ url_for('tour_detail', state_name_lower=state_name.lower(), tour_slug=tour.Slug) }}">{{ tour.Title }}</a>
+                            <a href="{{ url_for('tour_detail', state_name_lower=state_name.lower().replace(' ', '-'), tour_slug=tour.Slug) }}">{{ tour.Title }}</a>
                         </li>
                         {% endfor %}
                     </ul>

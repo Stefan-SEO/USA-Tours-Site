@@ -591,9 +591,9 @@ def tour_redirect_by_id(state_name_lower, tour_id):
     if tour_id < len(state_tours):
         tour = state_tours[tour_id]
         # Redirect to the new URL format with slug
-        return redirect(url_for('tour_detail', state_name_lower=state_name_lower, tour_slug=tour.get('Slug', f'tour-{tour_id}')))
+        return redirect(url_for('tour_detail', state_name_lower=state_name_lower.replace(' ', '-'), tour_slug=tour.get('Slug', f'tour-{tour_id}')))
     
-    return redirect(url_for('state_tours', state_name_lower=state_name_lower))
+    return redirect(url_for('state_tours', state_name_lower=state_name_lower.replace(' ', '-')))
 
 @app.route('/search')
 def search():
