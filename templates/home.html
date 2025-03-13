@@ -21,7 +21,7 @@
         <div class="top-picks-row">
             <div class="top-pick-card">
                 <div class="top-pick-label">Top Pick</div>
-                <a href="/hawaii/tour/oahu-grand-circle-island-day-tour-with-dole-plantation">
+                <a href="/hawaii/tour/tour-of-north-shore-waimea-waterfall">
                     <div class="top-pick-image">
                         <img src="{{ url_for('static', filename='images/all-states/Hawaii.jpg') }}?v={{ now.timestamp() }}" alt="Hawaii Tour">
                     </div>
@@ -147,7 +147,7 @@
                         {% elif state_name == 'New Mexico' %}
                         <img src="{{ url_for('static', filename='images/all-states/New-Mexico.jpg') }}?v={{ now.timestamp() }}" alt="{{ state_name }}">
                         {% elif state_name == 'Rhode Island' %}
-                        <img src="{{ url_for('static', filename='images/all-states/Rhode-Island.jpg') }}?v={{ now.timestamp() }}" alt="{{ state_name }}">
+                        <img src="{{ url_for('static', filename='images/all-states/rhode-island-state.jpg') }}?v={{ now.timestamp() }}" alt="{{ state_name }}">
                         {% else %}
                         <img src="{{ url_for('static', filename='images/all-states/' + state_name + '.jpg') }}" alt="{{ state_name }}">
                         {% endif %}
