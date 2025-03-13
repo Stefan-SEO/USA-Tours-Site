@@ -39,6 +39,18 @@
                                 <img src="{{ url_for('static', filename='images/all-states/Oklahoma city.jpg') }}" alt="{{ tour.State }}">
                                 {% elif tour.State == 'Washington' %}
                                 <img src="{{ url_for('static', filename='images/all-states/Seattle.jpg') }}" alt="{{ tour.State }}">
+                                {% elif tour.State == 'Indiana' %}
+                                <img src="{{ url_for('static', filename='images/all-states/indiana.jpg') }}" alt="{{ tour.State }}">
+                                {% elif tour.State == 'Iowa' %}
+                                <img src="{{ url_for('static', filename='images/all-states/iowa.jpg') }}" alt="{{ tour.State }}">
+                                {% elif tour.State == 'Maryland' %}
+                                <img src="{{ url_for('static', filename='images/all-states/maryland.jpg') }}" alt="{{ tour.State }}">
+                                {% elif tour.State == 'South Carolina' %}
+                                <img src="{{ url_for('static', filename='images/all-states/south carolina.jpg') }}" alt="{{ tour.State }}">
+                                {% elif tour.State == 'South Dakota' %}
+                                <img src="{{ url_for('static', filename='images/all-states/south dakota.jpg') }}" alt="{{ tour.State }}">
+                                {% elif tour.State == 'Vermont' %}
+                                <img src="{{ url_for('static', filename='images/all-states/vermont.jpg') }}" alt="{{ tour.State }}">
                                 {% else %}
                                 <img src="{{ url_for('static', filename='images/all-states/' + tour.State + '.jpg') }}" alt="{{ tour.State }}">
                                 {% endif %}
