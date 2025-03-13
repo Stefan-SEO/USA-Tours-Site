@@ -40,7 +40,7 @@
                                 {% elif tour.State == 'Washington' %}
                                 <img src="{{ url_for('static', filename='images/All States/Seattle.jpg') }}" alt="{{ tour.State }}">
                                 {% else %}
-                                <img src="{{ url_for('static', filename='images/All States/' + tour.State.lower() + '.jpg') }}" alt="{{ tour.State }}">
+                                <img src="{{ url_for('static', filename='images/All States/' + tour.State + '.jpg') }}" alt="{{ tour.State }}">
                                 {% endif %}
                             {% endif %}
                         </a>
