@@ -33,7 +33,7 @@
                 {% elif state_full == 'Washington' %}
                 <img src="{{ url_for('static', filename='images/All States/Seattle.jpg') }}" alt="{{ state_full }}">
                 {% else %}
-                <img src="{{ url_for('static', filename='images/All States/' + state_full + '.jpg') }}" alt="{{ state_full }}">
+                <img src="{{ url_for('static', filename='images/All States/' + state_full.lower() + '.jpg') }}" alt="{{ state_full }}">
                 {% endif %}
             {% endif %}
         </div>
@@ -156,7 +156,7 @@
                                     {% elif state_full == 'Washington' %}
                                     <img src="{{ url_for('static', filename='images/All States/Seattle.jpg') }}" alt="{{ state_full }}">
                                     {% else %}
-                                    <img src="{{ url_for('static', filename='images/All States/' + state_full + '.jpg') }}" alt="{{ state_full }}">
+                                    <img src="{{ url_for('static', filename='images/All States/' + state_full.lower() + '.jpg') }}" alt="{{ state_full }}">
                                     {% endif %}
                                 {% endif %}
                             </a>

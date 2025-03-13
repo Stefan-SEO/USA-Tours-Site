@@ -127,7 +127,7 @@
                         {% elif state_name == 'Washington' %}
                         <img src="{{ url_for('static', filename='images/All States/Seattle.jpg') }}" alt="{{ state_name }}">
                         {% else %}
-                        <img src="{{ url_for('static', filename='images/All States/' + state_name + '.jpg') }}" alt="{{ state_name }}">
+                        <img src="{{ url_for('static', filename='images/All States/' + state_name.lower() + '.jpg') }}" alt="{{ state_name }}">
                         {% endif %}
                     </div>
                     <h3>{{ state_name }}</h3>
