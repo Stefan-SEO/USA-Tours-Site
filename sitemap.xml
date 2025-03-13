@@ -2,315 +2,315 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
-    <loc>https://usatours.example.com/</loc>
+    <loc>https://www.besttoursinusa.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <!-- Search Page -->
   <url>
-    <loc>https://usatours.example.com/search</loc>
+    <loc>https://www.besttoursinusa.com/search</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- HTML Sitemap -->
   <url>
-    <loc>https://usatours.example.com/sitemap</loc>
+    <loc>https://www.besttoursinusa.com/sitemap</loc>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <!-- State Pages -->
   <url>
-    <loc>https://usatours.example.com/alabama</loc>
+    <loc>https://www.besttoursinusa.com/alabama</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/alaska</loc>
+    <loc>https://www.besttoursinusa.com/alaska</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/arizona</loc>
+    <loc>https://www.besttoursinusa.com/arizona</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/arkansas</loc>
+    <loc>https://www.besttoursinusa.com/arkansas</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/california</loc>
+    <loc>https://www.besttoursinusa.com/california</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/colorado</loc>
+    <loc>https://www.besttoursinusa.com/colorado</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/connecticut</loc>
+    <loc>https://www.besttoursinusa.com/connecticut</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/delaware</loc>
+    <loc>https://www.besttoursinusa.com/delaware</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/florida</loc>
+    <loc>https://www.besttoursinusa.com/florida</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/georgia</loc>
+    <loc>https://www.besttoursinusa.com/georgia</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/hawaii</loc>
+    <loc>https://www.besttoursinusa.com/hawaii</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/idaho</loc>
+    <loc>https://www.besttoursinusa.com/idaho</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/illinois</loc>
+    <loc>https://www.besttoursinusa.com/illinois</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/indiana</loc>
+    <loc>https://www.besttoursinusa.com/indiana</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/iowa</loc>
+    <loc>https://www.besttoursinusa.com/iowa</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/kansas</loc>
+    <loc>https://www.besttoursinusa.com/kansas</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/kentucky</loc>
+    <loc>https://www.besttoursinusa.com/kentucky</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/louisiana</loc>
+    <loc>https://www.besttoursinusa.com/louisiana</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/maine</loc>
+    <loc>https://www.besttoursinusa.com/maine</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/maryland</loc>
+    <loc>https://www.besttoursinusa.com/maryland</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/massachusetts</loc>
+    <loc>https://www.besttoursinusa.com/massachusetts</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/michigan</loc>
+    <loc>https://www.besttoursinusa.com/michigan</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/minnesota</loc>
+    <loc>https://www.besttoursinusa.com/minnesota</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/mississippi</loc>
+    <loc>https://www.besttoursinusa.com/mississippi</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/missouri</loc>
+    <loc>https://www.besttoursinusa.com/missouri</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/montana</loc>
+    <loc>https://www.besttoursinusa.com/montana</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/nebraska</loc>
+    <loc>https://www.besttoursinusa.com/nebraska</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/nevada</loc>
+    <loc>https://www.besttoursinusa.com/nevada</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/new-hampshire</loc>
+    <loc>https://www.besttoursinusa.com/new-hampshire</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/new-jersey</loc>
+    <loc>https://www.besttoursinusa.com/new-jersey</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/new-mexico</loc>
+    <loc>https://www.besttoursinusa.com/new-mexico</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/new-york</loc>
+    <loc>https://www.besttoursinusa.com/new-york</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/north-carolina</loc>
+    <loc>https://www.besttoursinusa.com/north-carolina</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/north-dakota</loc>
+    <loc>https://www.besttoursinusa.com/north-dakota</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/ohio</loc>
+    <loc>https://www.besttoursinusa.com/ohio</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/oklahoma</loc>
+    <loc>https://www.besttoursinusa.com/oklahoma</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/oregon</loc>
+    <loc>https://www.besttoursinusa.com/oregon</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/pennsylvania</loc>
+    <loc>https://www.besttoursinusa.com/pennsylvania</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/rhode-island</loc>
+    <loc>https://www.besttoursinusa.com/rhode-island</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/south-carolina</loc>
+    <loc>https://www.besttoursinusa.com/south-carolina</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/south-dakota</loc>
+    <loc>https://www.besttoursinusa.com/south-dakota</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/tennessee</loc>
+    <loc>https://www.besttoursinusa.com/tennessee</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/texas</loc>
+    <loc>https://www.besttoursinusa.com/texas</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/utah</loc>
+    <loc>https://www.besttoursinusa.com/utah</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/vermont</loc>
+    <loc>https://www.besttoursinusa.com/vermont</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/virginia</loc>
+    <loc>https://www.besttoursinusa.com/virginia</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/washington</loc>
+    <loc>https://www.besttoursinusa.com/washington</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/west-virginia</loc>
+    <loc>https://www.besttoursinusa.com/west-virginia</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/wisconsin</loc>
+    <loc>https://www.besttoursinusa.com/wisconsin</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/wyoming</loc>
+    <loc>https://www.besttoursinusa.com/wyoming</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/district-of-columbia</loc>
+    <loc>https://www.besttoursinusa.com/district-of-columbia</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   
   <!-- Popular Tour Pages -->
   <url>
-    <loc>https://usatours.example.com/hawaii/tour/tour-of-north-shore-waimea-waterfall</loc>
+    <loc>https://www.besttoursinusa.com/hawaii/tour/tour-of-north-shore-waimea-waterfall</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/florida/tour/key-west-sunset-sail-with-full-bar-live-music-and-hors-doeuvres</loc>
+    <loc>https://www.besttoursinusa.com/florida/tour/key-west-sunset-sail-with-full-bar-live-music-and-hors-doeuvres</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/arizona/tour/small-group-grand-canyon-complete-tour-from-sedona-or-flagstaff</loc>
+    <loc>https://www.besttoursinusa.com/arizona/tour/small-group-grand-canyon-complete-tour-from-sedona-or-flagstaff</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/new-york/tour/new-york-in-one-day-guided-sightseeing-tour</loc>
+    <loc>https://www.besttoursinusa.com/new-york/tour/new-york-in-one-day-guided-sightseeing-tour</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/nevada/tour/grand-canyon-west-hoover-dam-stop-and-optional-lunch-and-skywalk</loc>
+    <loc>https://www.besttoursinusa.com/nevada/tour/grand-canyon-west-hoover-dam-stop-and-optional-lunch-and-skywalk</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/utah/tour/discover-the-best-of-moab-in-a-day-arches-canyonlands-dead-horse</loc>
+    <loc>https://www.besttoursinusa.com/utah/tour/discover-the-best-of-moab-in-a-day-arches-canyonlands-dead-horse</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://usatours.example.com/north-carolina/tour/charlotte-comedy-city-tour</loc>
+    <loc>https://www.besttoursinusa.com/north-carolina/tour/charlotte-comedy-city-tour</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
