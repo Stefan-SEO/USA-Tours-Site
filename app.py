@@ -427,21 +427,24 @@ def state_tours(state_name_lower):
     # Get page number from query parameters, default to 1
     page = request.args.get('page', 1, type=int)
     
+    # Replace hyphens with spaces for processing
+    state_name_processed = state_name_lower.replace('-', ' ')
+    
     # Convert lowercase state name to proper case
-    state_full = STATE_NAMES_LOWER.get(state_name_lower.lower())
+    state_full = STATE_NAMES_LOWER.get(state_name_processed.lower())
     
     # If not found in lowercase mapping, try other methods
     if not state_full:
-        if state_name_lower.upper() in STATE_NAMES:
+        if state_name_processed.upper() in STATE_NAMES:
             # It's an abbreviation
-            state_abbr = state_name_lower.upper()
+            state_abbr = state_name_processed.upper()
             state_full = STATE_NAMES[state_abbr]
         else:
             # Try to capitalize the first letter of each word
-            state_full = ' '.join(word.capitalize() for word in state_name_lower.split())
+            state_full = ' '.join(word.capitalize() for word in state_name_processed.split())
     
     # Get the abbreviation for the state
-    state_abbr = STATE_ABBRS.get(state_full, state_name_lower.upper())
+    state_abbr = STATE_ABBRS.get(state_full, state_name_processed.upper())
     
     # Filter tours by state
     state_tours = []
@@ -494,21 +497,24 @@ def tour_detail(state_name_lower, tour_slug):
     east_coast_tours = get_east_coast_tours()
     most_reviewed_tours = get_most_reviewed_tours()
     
+    # Replace hyphens with spaces for processing
+    state_name_processed = state_name_lower.replace('-', ' ')
+    
     # Convert lowercase state name to proper case
-    state_full = STATE_NAMES_LOWER.get(state_name_lower.lower())
+    state_full = STATE_NAMES_LOWER.get(state_name_processed.lower())
     
     # If not found in lowercase mapping, try other methods
     if not state_full:
-        if state_name_lower.upper() in STATE_NAMES:
+        if state_name_processed.upper() in STATE_NAMES:
             # It's an abbreviation
-            state_abbr = state_name_lower.upper()
+            state_abbr = state_name_processed.upper()
             state_full = STATE_NAMES[state_abbr]
         else:
             # Try to capitalize the first letter of each word
-            state_full = ' '.join(word.capitalize() for word in state_name_lower.split())
+            state_full = ' '.join(word.capitalize() for word in state_name_processed.split())
     
     # Get the abbreviation for the state
-    state_abbr = STATE_ABBRS.get(state_full, state_name_lower.upper())
+    state_abbr = STATE_ABBRS.get(state_full, state_name_processed.upper())
     
     # Find the tour by slug
     tour = None

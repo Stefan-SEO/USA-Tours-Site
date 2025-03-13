@@ -92,19 +92,19 @@
     {% if total_pages > 1 %}
     <div class="pagination">
         {% if current_page > 1 %}
-        <a href="{{ url_for('state_tours', state_name_lower=state_full.lower(), page=current_page-1) }}" class="page-link">&laquo; Previous</a>
+        <a href="{{ url_for('state_tours', state_name_lower=state_full.lower().replace(' ', '-'), page=current_page-1) }}" class="page-link">&laquo; Previous</a>
         {% endif %}
         
         {% for page_num in range(1, total_pages + 1) %}
             {% if page_num == current_page %}
             <span class="page-link active">{{ page_num }}</span>
             {% else %}
-            <a href="{{ url_for('state_tours', state_name_lower=state_full.lower(), page=page_num) }}" class="page-link">{{ page_num }}</a>
+            <a href="{{ url_for('state_tours', state_name_lower=state_full.lower().replace(' ', '-'), page=page_num) }}" class="page-link">{{ page_num }}</a>
             {% endif %}
         {% endfor %}
         
         {% if current_page < total_pages %}
-        <a href="{{ url_for('state_tours', state_name_lower=state_full.lower(), page=current_page+1) }}" class="page-link">Next &raquo;</a>
+        <a href="{{ url_for('state_tours', state_name_lower=state_full.lower().replace(' ', '-'), page=current_page+1) }}" class="page-link">Next &raquo;</a>
         {% endif %}
     </div>
     {% endif %}
