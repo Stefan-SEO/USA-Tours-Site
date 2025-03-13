@@ -534,16 +534,15 @@ def tour_detail(state_name_lower, tour_slug):
             state_tours.append(t)
     
     # Make sure we have exactly 3 tours for the similar tours section
-    # If we don't have enough tours from the same state, add some from other states
-    if len(state_tours) < 3:  # We need exactly 3 similar tours
-        other_states_tours = []
-        for t in tours_data:
-            if t != tour and t not in state_tours:
-                other_states_tours.append(t)
-        
-        # Add some tours from other states
-        random.shuffle(other_states_tours)
-        state_tours.extend(other_states_tours[:3 - len(state_tours)])  # Add only what we need to reach 3
+    # If we don't have enough tours from the same state, duplicate existing ones
+    if len(state_tours) < 3 and len(state_tours) > 0:
+        # Duplicate existing tours from the same state instead of showing tours from other states
+        while len(state_tours) < 3:
+            # Add duplicates of existing tours (they'll have the same links but it's better than showing other states)
+            state_tours.append(state_tours[len(state_tours) % len(state_tours)])
+    elif len(state_tours) == 0:
+        # If no other tours from this state, just show the current tour three times
+        state_tours = [tour, tour, tour]
     
     # Limit to exactly 3 tours
     state_tours = state_tours[:3]
