@@ -704,7 +704,65 @@ def sitemap():
 
 @app.route('/sitemap.xml')
 def sitemap_xml():
-    return send_from_directory(app.root_path, 'sitemap.xml')
+    """Generate a dynamic sitemap.xml with all pages"""
+    # Create the XML content
+    xml_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    xml_content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    
+    # Add homepage
+    xml_content += '  <url>\n'
+    xml_content += '    <loc>https://www.besttoursinusa.com/</loc>\n'
+    xml_content += '    <changefreq>weekly</changefreq>\n'
+    xml_content += '    <priority>1.0</priority>\n'
+    xml_content += '  </url>\n'
+    
+    # Add search page
+    xml_content += '  <url>\n'
+    xml_content += '    <loc>https://www.besttoursinusa.com/search</loc>\n'
+    xml_content += '    <changefreq>weekly</changefreq>\n'
+    xml_content += '    <priority>0.8</priority>\n'
+    xml_content += '  </url>\n'
+    
+    # Add HTML sitemap page
+    xml_content += '  <url>\n'
+    xml_content += '    <loc>https://www.besttoursinusa.com/sitemap</loc>\n'
+    xml_content += '    <changefreq>weekly</changefreq>\n'
+    xml_content += '    <priority>0.5</priority>\n'
+    xml_content += '  </url>\n'
+    
+    # Get all states
+    states = get_all_states()
+    
+    # Add state pages
+    for state_abbr, state_name in states:
+        state_url = state_name.lower().replace(' ', '-')
+        xml_content += '  <url>\n'
+        xml_content += f'    <loc>https://www.besttoursinusa.com/{state_url}</loc>\n'
+        xml_content += '    <changefreq>weekly</changefreq>\n'
+        xml_content += '    <priority>0.8</priority>\n'
+        xml_content += '  </url>\n'
+    
+    # Add all tour pages
+    for tour in tours_data:
+        if tour.get('State') and tour.get('Slug'):
+            state_url = tour['State'].lower().replace(' ', '-')
+            tour_slug = tour['Slug']
+            xml_content += '  <url>\n'
+            xml_content += f'    <loc>https://www.besttoursinusa.com/{state_url}/tour/{tour_slug}</loc>\n'
+            xml_content += '    <changefreq>weekly</changefreq>\n'
+            xml_content += '    <priority>0.7</priority>\n'
+            xml_content += '  </url>\n'
+    
+    # Close the XML
+    xml_content += '</urlset>'
+    
+    # Return the XML with the correct content type
+    response = app.response_class(
+        response=xml_content,
+        status=200,
+        mimetype='application/xml'
+    )
+    return response
 
 if __name__ == '__main__':
     try:
