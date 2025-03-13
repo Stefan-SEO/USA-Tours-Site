@@ -157,65 +157,67 @@
                     {% set displayed_tours.count = displayed_tours.count + 1 %}
                     <div class="similar-tour-card">
                         <div class="similar-tour-image">
-                            <a href="{{ url_for('tour_detail', state_name_lower=state_full.lower(), tour_slug=other_tour.Slug) }}">
+                            <a href="{{ url_for('tour_detail', state_name_lower=other_tour.State.lower().replace(' ', '-'), tour_slug=other_tour.Slug) }}">
                                 {% if other_tour['Image URL'] and other_tour['Image URL']|length > 0 %}
                                 <img src="{{ other_tour['Image URL'] }}" alt="{{ other_tour.Title }}">
                                 {% else %}
-                                    {% if state_full == 'Georgia' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/Atlanta-Georgia.jpg') }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'West Virginia' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/Charleston-West-Virginia.jpg') }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'New York' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/New-York-City.jpg') }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'New Hampshire' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/New-Hamshire.jpg') }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'Louisiana' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/Louisiana-New-Orleans.jpg') }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'District of Columbia' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/Washington-DC.jpg') }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'Oklahoma' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/Oklahoma-city.jpg') }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'Washington' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/Seattle.jpg') }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'Indiana' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/indiana.jpg') }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'Iowa' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/iowa.jpg') }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'Maryland' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/maryland.jpg') }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'South Carolina' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/south-carolina.jpg') }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'South Dakota' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/south-dakota.jpg') }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'Vermont' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/vermont.jpg') }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'North Carolina' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/North-Carolina.jpg') }}?v={{ now.timestamp() }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'North Dakota' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/North-Dakota.jpg') }}?v={{ now.timestamp() }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'New Jersey' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/New-Jersey.jpg') }}?v={{ now.timestamp() }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'New Mexico' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/New-Mexico.jpg') }}?v={{ now.timestamp() }}" alt="{{ state_full }}">
-                                    {% elif state_full == 'Rhode Island' %}
-                                    <img src="{{ url_for('static', filename='images/all-states/Rhode-Island.jpg') }}?v={{ now.timestamp() }}" alt="{{ state_full }}">
+                                    {% if other_tour.State == 'Georgia' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/Atlanta-Georgia.jpg') }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'West Virginia' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/Charleston-West-Virginia.jpg') }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'New York' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/New-York-City.jpg') }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'New Hampshire' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/New-Hamshire.jpg') }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'Louisiana' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/Louisiana-New-Orleans.jpg') }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'District of Columbia' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/Washington-DC.jpg') }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'Oklahoma' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/Oklahoma-city.jpg') }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'Washington' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/Seattle.jpg') }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'Indiana' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/indiana.jpg') }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'Iowa' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/iowa.jpg') }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'Maryland' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/maryland.jpg') }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'South Carolina' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/south-carolina.jpg') }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'South Dakota' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/south-dakota.jpg') }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'Vermont' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/vermont.jpg') }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'North Carolina' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/North-Carolina.jpg') }}?v={{ now.timestamp() }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'North Dakota' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/North-Dakota.jpg') }}?v={{ now.timestamp() }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'New Jersey' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/New-Jersey.jpg') }}?v={{ now.timestamp() }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'New Mexico' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/New-Mexico.jpg') }}?v={{ now.timestamp() }}" alt="{{ other_tour.State }}">
+                                    {% elif other_tour.State == 'Rhode Island' %}
+                                    <img src="{{ url_for('static', filename='images/all-states/Rhode-Island.jpg') }}?v={{ now.timestamp() }}" alt="{{ other_tour.State }}">
                                     {% else %}
-                                    <img src="{{ url_for('static', filename='images/all-states/' + state_full + '.jpg') }}" alt="{{ state_full }}">
+                                    <img src="{{ url_for('static', filename='images/all-states/' + other_tour.State + '.jpg') }}" alt="{{ other_tour.State }}">
                                     {% endif %}
                                 {% endif %}
                             </a>
                         </div>
                         <div class="similar-tour-info">
                             <h3 class="text-center">
-                                <a href="{{ url_for('tour_detail', state_name_lower=state_full.lower(), tour_slug=other_tour.Slug) }}">
+                                <a href="{{ url_for('tour_detail', state_name_lower=other_tour.State.lower().replace(' ', '-'), tour_slug=other_tour.Slug) }}">
                                     {{ other_tour.Title }}
                                 </a>
                             </h3>
                             
-                            <p class="similar-tour-type text-center">{{ state_full }} tour</p>
+                            <p class="similar-tour-type text-center">
+                                <a href="{{ url_for('state_tours', state_name_lower=other_tour.State.lower().replace(' ', '-')) }}">{{ other_tour.State }}</a>
+                            </p>
                             <p class="similar-tour-location text-center">{{ other_tour.Duration }}</p>
                             
-                            <a href="{{ url_for('tour_detail', state_name_lower=state_full.lower(), tour_slug=other_tour.Slug) }}" class="visit-website-button">Book Now</a>
+                            <a href="{{ url_for('tour_detail', state_name_lower=other_tour.State.lower().replace(' ', '-'), tour_slug=other_tour.Slug) }}" class="visit-website-button">Book Now</a>
                         </div>
                     </div>
                 {% endif %}
