@@ -2,7 +2,7 @@ import os
 import csv
 import re
 from math import ceil
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 from datetime import datetime
 import random
 
@@ -701,6 +701,10 @@ def sitemap():
                           east_coast_tours=east_coast_tours,
                           most_reviewed_tours=most_reviewed_tours,
                           now=datetime.now())
+
+@app.route('/sitemap.xml')
+def sitemap_xml():
+    return send_from_directory(app.root_path, 'sitemap.xml')
 
 if __name__ == '__main__':
     try:

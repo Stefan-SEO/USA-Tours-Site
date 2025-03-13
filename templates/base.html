@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <meta name="description" content="{% block meta_description %}Discover the best tours across the United States. Find tours by state and explore America's top attractions.{% endblock %}">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo.png') }}">
+    <link rel="sitemap" type="application/xml" href="{{ url_for('sitemap_xml') }}">
 </head>
 <body>
     <header>
@@ -83,7 +84,7 @@
             
             <div class="footer-bottom">
                 <p>&copy; {{ now.year }} USA Tours Directory. All rights reserved.</p>
-                <p><a href="{{ url_for('sitemap') }}">Sitemap</a></p>
+                <p><a href="{{ url_for('sitemap') }}">Sitemap</a> | <a href="{{ url_for('sitemap_xml') }}">XML Sitemap</a></p>
             </div>
         </div>
     </footer>
