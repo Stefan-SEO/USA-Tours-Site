@@ -139,13 +139,15 @@
                         {% elif state_name == 'Vermont' %}
                         <img src="{{ url_for('static', filename='images/all-states/vermont.jpg') }}" alt="{{ state_name }}">
                         {% elif state_name == 'North Carolina' %}
-                        <img src="{{ url_for('static', filename='images/all-states/North-Carolina.jpg') }}" alt="{{ state_name }}">
+                        <img src="{{ url_for('static', filename='images/all-states/North-Carolina.jpg') }}?v={{ now.timestamp() }}" alt="{{ state_name }}">
                         {% elif state_name == 'North Dakota' %}
-                        <img src="{{ url_for('static', filename='images/all-states/North-Dakota.jpg') }}" alt="{{ state_name }}">
+                        <img src="{{ url_for('static', filename='images/all-states/North-Dakota.jpg') }}?v={{ now.timestamp() }}" alt="{{ state_name }}">
                         {% elif state_name == 'New Jersey' %}
-                        <img src="{{ url_for('static', filename='images/all-states/New-Jersey.jpg') }}" alt="{{ state_name }}">
+                        <img src="{{ url_for('static', filename='images/all-states/New-Jersey.jpg') }}?v={{ now.timestamp() }}" alt="{{ state_name }}">
                         {% elif state_name == 'New Mexico' %}
-                        <img src="{{ url_for('static', filename='images/all-states/New-Mexico.jpg') }}" alt="{{ state_name }}">
+                        <img src="{{ url_for('static', filename='images/all-states/New-Mexico.jpg') }}?v={{ now.timestamp() }}" alt="{{ state_name }}">
+                        {% elif state_name == 'Rhode Island' %}
+                        <img src="{{ url_for('static', filename='images/all-states/Rhode-Island.jpg') }}?v={{ now.timestamp() }}" alt="{{ state_name }}">
                         {% else %}
                         <img src="{{ url_for('static', filename='images/all-states/' + state_name + '.jpg') }}" alt="{{ state_name }}">
                         {% endif %}

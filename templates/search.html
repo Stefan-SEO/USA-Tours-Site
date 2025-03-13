@@ -52,13 +52,15 @@
                                 {% elif tour.State == 'Vermont' %}
                                 <img src="{{ url_for('static', filename='images/all-states/vermont.jpg') }}" alt="{{ tour.State }}">
                                 {% elif tour.State == 'North Carolina' %}
-                                <img src="{{ url_for('static', filename='images/all-states/North-Carolina.jpg') }}" alt="{{ tour.State }}">
+                                <img src="{{ url_for('static', filename='images/all-states/North-Carolina.jpg') }}?v={{ now.timestamp() }}" alt="{{ tour.State }}">
                                 {% elif tour.State == 'North Dakota' %}
-                                <img src="{{ url_for('static', filename='images/all-states/North-Dakota.jpg') }}" alt="{{ tour.State }}">
+                                <img src="{{ url_for('static', filename='images/all-states/North-Dakota.jpg') }}?v={{ now.timestamp() }}" alt="{{ tour.State }}">
                                 {% elif tour.State == 'New Jersey' %}
-                                <img src="{{ url_for('static', filename='images/all-states/New-Jersey.jpg') }}" alt="{{ tour.State }}">
+                                <img src="{{ url_for('static', filename='images/all-states/New-Jersey.jpg') }}?v={{ now.timestamp() }}" alt="{{ tour.State }}">
                                 {% elif tour.State == 'New Mexico' %}
-                                <img src="{{ url_for('static', filename='images/all-states/New-Mexico.jpg') }}" alt="{{ tour.State }}">
+                                <img src="{{ url_for('static', filename='images/all-states/New-Mexico.jpg') }}?v={{ now.timestamp() }}" alt="{{ tour.State }}">
+                                {% elif tour.State == 'Rhode Island' %}
+                                <img src="{{ url_for('static', filename='images/all-states/Rhode-Island.jpg') }}?v={{ now.timestamp() }}" alt="{{ tour.State }}">
                                 {% else %}
                                 <img src="{{ url_for('static', filename='images/all-states/' + tour.State + '.jpg') }}" alt="{{ tour.State }}">
                                 {% endif %}
