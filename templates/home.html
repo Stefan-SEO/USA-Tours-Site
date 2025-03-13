@@ -21,7 +21,7 @@
         <div class="top-picks-row">
             <div class="top-pick-card">
                 <div class="top-pick-label">Top Pick</div>
-                <a href="/hawaii/tour/tour-of-north-shore-waimea-waterfall">
+                <a href="/hawaii/tour/oahu-grand-circle-island-day-tour-with-dole-plantation">
                     <div class="top-pick-image">
                         <img src="{{ url_for('static', filename='images/all-states/Hawaii.jpg') }}?v={{ now.timestamp() }}" alt="Hawaii Tour">
                     </div>
@@ -64,7 +64,7 @@
                 <div class="top-pick-label">Top Pick</div>
                 <a href="/new%20york/tour/new-york-in-one-day-guided-sightseeing-tour">
                     <div class="top-pick-image">
-                        <img src="{{ url_for('static', filename='images/all-states/New York City.jpg') }}?v={{ now.timestamp() }}" alt="New York Tour">
+                        <img src="{{ url_for('static', filename='images/all-states/New-York-City.jpg') }}?v={{ now.timestamp() }}" alt="New York Tour">
                     </div>
                     <h3>New York in One Day Guided Sightseeing Tour</h3>
                     <p class="top-pick-state">New York</p>
@@ -111,19 +111,19 @@
                 <a href="{{ url_for('state_tours', state_name_lower=state_name.lower()) }}">
                     <div class="state-image">
                         {% if state_name == 'Georgia' %}
-                        <img src="{{ url_for('static', filename='images/all-states/Atlanta Georgia.jpg') }}" alt="{{ state_name }}">
+                        <img src="{{ url_for('static', filename='images/all-states/Atlanta-Georgia.jpg') }}" alt="{{ state_name }}">
                         {% elif state_name == 'West Virginia' %}
-                        <img src="{{ url_for('static', filename='images/all-states/Charleston West Virginia.jpg') }}" alt="{{ state_name }}">
+                        <img src="{{ url_for('static', filename='images/all-states/Charleston-West-Virginia.jpg') }}" alt="{{ state_name }}">
                         {% elif state_name == 'New York' %}
-                        <img src="{{ url_for('static', filename='images/all-states/New York City.jpg') }}" alt="{{ state_name }}">
+                        <img src="{{ url_for('static', filename='images/all-states/New-York-City.jpg') }}" alt="{{ state_name }}">
                         {% elif state_name == 'New Hampshire' %}
-                        <img src="{{ url_for('static', filename='images/all-states/New Hamshire.jpg') }}" alt="{{ state_name }}">
+                        <img src="{{ url_for('static', filename='images/all-states/New-Hamshire.jpg') }}" alt="{{ state_name }}">
                         {% elif state_name == 'Louisiana' %}
-                        <img src="{{ url_for('static', filename='images/all-states/Louisiana New Orleans.jpg') }}" alt="{{ state_name }}">
+                        <img src="{{ url_for('static', filename='images/all-states/Louisiana-New-Orleans.jpg') }}" alt="{{ state_name }}">
                         {% elif state_name == 'District of Columbia' %}
-                        <img src="{{ url_for('static', filename='images/all-states/Washington DC.jpg') }}" alt="{{ state_name }}">
+                        <img src="{{ url_for('static', filename='images/all-states/Washington-DC.jpg') }}" alt="{{ state_name }}">
                         {% elif state_name == 'Oklahoma' %}
-                        <img src="{{ url_for('static', filename='images/all-states/Oklahoma city.jpg') }}" alt="{{ state_name }}">
+                        <img src="{{ url_for('static', filename='images/all-states/Oklahoma-city.jpg') }}" alt="{{ state_name }}">
                         {% elif state_name == 'Washington' %}
                         <img src="{{ url_for('static', filename='images/all-states/Seattle.jpg') }}" alt="{{ state_name }}">
                         {% elif state_name == 'Indiana' %}
@@ -133,9 +133,9 @@
                         {% elif state_name == 'Maryland' %}
                         <img src="{{ url_for('static', filename='images/all-states/maryland.jpg') }}" alt="{{ state_name }}">
                         {% elif state_name == 'South Carolina' %}
-                        <img src="{{ url_for('static', filename='images/all-states/south carolina.jpg') }}" alt="{{ state_name }}">
+                        <img src="{{ url_for('static', filename='images/all-states/south-carolina.jpg') }}" alt="{{ state_name }}">
                         {% elif state_name == 'South Dakota' %}
-                        <img src="{{ url_for('static', filename='images/all-states/south dakota.jpg') }}" alt="{{ state_name }}">
+                        <img src="{{ url_for('static', filename='images/all-states/south-dakota.jpg') }}" alt="{{ state_name }}">
                         {% elif state_name == 'Vermont' %}
                         <img src="{{ url_for('static', filename='images/all-states/vermont.jpg') }}" alt="{{ state_name }}">
                         {% else %}
@@ -181,7 +181,7 @@
         <div class="reviews-carousel">
             <div class="review-item">
                 <div class="review-image">
-                    <img src="{{ url_for('static', filename='images/Sarah from California.jpg') }}" alt="Sarah M.">
+                    <img src="{{ url_for('static', filename='images/Sarah-from-California.jpg') }}" alt="Sarah M.">
                 </div>
                 <div class="review-content">
                     <p class="review-text">"Booking was super easy, and the tour was even better than we expected! The guide was friendly, and we saw so many amazing places we wouldn't have found on our own. Highly recommend!"</p>
@@ -190,7 +190,7 @@
             </div>
             <div class="review-item">
                 <div class="review-image">
-                    <img src="{{ url_for('static', filename='images/James from Texas.jpg') }}" alt="James L.">
+                    <img src="{{ url_for('static', filename='images/James-from-Texas.jpg') }}" alt="James L.">
                 </div>
                 <div class="review-content">
                     <p class="review-text">"Great value for the price! We found the perfect day tour, and it was well-organized from start to finish. Definitely made our trip more memorable."</p>
@@ -199,7 +199,7 @@
             </div>
             <div class="review-item">
                 <div class="review-image">
-                    <img src="{{ url_for('static', filename='images/Emma from New York.jpg') }}" alt="Emma R.">
+                    <img src="{{ url_for('static', filename='images/Emma-from-New-York.jpg') }}" alt="Emma R.">
                 </div>
                 <div class="review-content">
                     <p class="review-text">"Customer service was quick and helpful when we had questions. The tour itself was fantastic, and everything went smoothly. Will definitely book again for our next trip!"</p>
